@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: tanleaks 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tanleaks
+  template:
+    metadata:
+      labels:
+        app: tanleaks 
+    spec:
+      containers:
+        - name: tanleaks 
+          image: faacr.azurecr.io/tanleaks
+          ports:
+          - containerPort: 80
